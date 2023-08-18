@@ -1,6 +1,7 @@
 package br.com.confitec.usecase.util;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,6 +22,6 @@ public class CalculadoraJuros {
         System.out.println("Quantidade de Parcelas: " + quantidadeParcelas);
         System.out.println("Valor Apólice: " + valorApolice);
         System.out.println("Juros " + juros);
-        return BigDecimal.ONE.add(juros).pow(quantidadeParcelas).multiply(valorApolice);
+        return BigDecimal.ONE.add(juros).pow(quantidadeParcelas).multiply(valorApolice).setScale(2, RoundingMode.HALF_UP);
     }
 }

@@ -13,5 +13,5 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OpcoesPagamentoResponse {
-    private List<InformacaoValoresParcela> dados;
+    private List<InformacaoValoresParcelaVM> dados;
 }

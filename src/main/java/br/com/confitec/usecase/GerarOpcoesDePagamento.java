@@ -65,7 +65,7 @@ public class GerarOpcoesDePagamento {
         System.out.println("Parcelas com todas as faixas: INICIO\n");
         parcelasComTodasAsFaixas.forEach((k, v) -> System.out.println((k + ":" + v)));
         System.out.println("Parcelas com todas as faixas: FIM\n");
-        return new ArrayList();
+        return CalculadoraParcela.calcularParcelas(parcelasComTodasAsFaixas);
         
     }
 }
