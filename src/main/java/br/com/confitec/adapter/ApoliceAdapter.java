@@ -1,5 +1,6 @@
 package br.com.confitec.adapter;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,16 +19,14 @@ public class ApoliceAdapter {
         return new Cobertura()
             .builder()
             .cobertura(coberturaVM.getCobertura())
-            .valor(coberturaVM.getValor())
+            .valor(BigDecimal.valueOf(coberturaVM.getValor()))
             .build();
     }
 
     private static OpcaoParcelamento toOpcaoParcelamento(OpcaoParcelamentoVM opcaoParcelamentoVM) {
         return new OpcaoParcelamento()
             .builder()
-            .quantidadeMinimaParcelas(opcaoParcelamentoVM.getQuantidadeMinimaParcelas())
-            .quantidadeMaximaParcelas(opcaoParcelamentoVM.getQuantidadeMaximaParcelas())
-            .juros(opcaoParcelamentoVM.getJuros())
+            .juros(BigDecimal.valueOf(opcaoParcelamentoVM.getJuros()))
             .build();
     }
 

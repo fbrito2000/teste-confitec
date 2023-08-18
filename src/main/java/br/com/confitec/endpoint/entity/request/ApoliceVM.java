@@ -12,7 +12,8 @@ import lombok.Setter;
 @Builder
 public class ApoliceVM {
 
-    List<CoberturaVM> listCobertura; 
+    List<CoberturaVM> listCobertura;
+ 
     List<OpcaoParcelamentoVM> listOpcaoParcelamento;
     
 }

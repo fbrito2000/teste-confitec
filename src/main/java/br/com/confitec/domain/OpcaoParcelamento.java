@@ -1,5 +1,7 @@
 package br.com.confitec.domain;
 
+import java.math.BigDecimal;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,9 +14,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class OpcaoParcelamento {
-    private int quantidadeMinimaParcelas;
-    private int quantidadeMaximaParcelas;
-    private double juros;
+    private BigDecimal juros = BigDecimal.ZERO;
+    
 }
 /**
 REQUEST

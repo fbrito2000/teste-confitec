@@ -8,19 +8,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.confitec.adapter.ApoliceAdapter;
 import br.com.confitec.endpoint.entity.request.ApoliceVM;
-import br.com.confitec.usecase.CalcularPrecos;
+import br.com.confitec.usecase.GerarOpcoesDePagamento;
 
 @RestController
 @RequestMapping("/confitec/teste/parcelamento")
-public class PaymentOptionsController {
+public class OpcoesPagamentoController {
     
     @Autowired
-    CalcularPrecos calcularPrecos;
+    GerarOpcoesDePagamento gerarOpcoesDePagamento;
 
     @PostMapping()
     public void create(@RequestBody ApoliceVM apoliceVM) {
 
-        ApoliceAdapter adapter = new ApoliceAdapter();
-        calcularPrecos.montarProposta(adapter.toApolice(apoliceVM));
+        gerarOpcoesDePagamento.execute(ApoliceAdapter.toApolice(apoliceVM));
     }
 }

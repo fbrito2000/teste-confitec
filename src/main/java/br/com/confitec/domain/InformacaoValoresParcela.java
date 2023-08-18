@@ -13,9 +13,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Cobertura {
-
-    private int cobertura;
-    private BigDecimal valor;
-    
+public class InformacaoValoresParcela {
+    private int quantidadeParcelas;
+    private BigDecimal valorPrimeiraParcela;
+    private BigDecimal valorDemaisParcelas;
+    private BigDecimal valorParcelamentoTotal;
 }
