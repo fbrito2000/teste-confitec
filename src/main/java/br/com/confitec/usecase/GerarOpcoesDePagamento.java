@@ -1,13 +1,9 @@
 package br.com.confitec.usecase;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import org.springframework.stereotype.Service;
 
 import br.com.confitec.domain.Apolice;
@@ -26,9 +22,7 @@ public class GerarOpcoesDePagamento {
     public List<InformacaoValoresParcela> execute(Apolice apolice) {
         BigDecimal VALOR_TOTAL_COBERTURAS = BigDecimal.ZERO;
 
-        List<InformacaoValoresParcela> informacaoValoresParcela = new ArrayList<>(12); 
-
-        //Passo 1: obter valor total das coberturas
+            //Passo 1: obter valor total das coberturas
         List<Cobertura> listCoberturas = apolice.getListCobertura();
             
         for (Cobertura cobertura : listCoberturas) {

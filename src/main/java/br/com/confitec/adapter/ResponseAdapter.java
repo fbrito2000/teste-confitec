@@ -12,7 +12,7 @@ public class ResponseAdapter {
 
         List<InformacaoValoresParcelaVM> informacaoValoresParcelaVMs = new ArrayList<>();
         for (InformacaoValoresParcela informacaoValoresParcela : listInformacaoValoresParcela) {
-            informacaoValoresParcelaVMs.add(new InformacaoValoresParcelaVM()
+            informacaoValoresParcelaVMs.add(InformacaoValoresParcelaVM
             .builder()
             .quantidadeParcelas(informacaoValoresParcela.getQuantidadeParcelas())
             .valorPrimeiraParcela(informacaoValoresParcela.getValorPrimeiraParcela())

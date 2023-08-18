@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class ApoliceAdapter {
 
     private static Cobertura toCobertura(CoberturaVM coberturaVM) {
-        return new Cobertura()
+        return  Cobertura
             .builder()
             .cobertura(coberturaVM.getCobertura())
             .valor(BigDecimal.valueOf(coberturaVM.getValor()))
@@ -24,7 +24,7 @@ public class ApoliceAdapter {
     }
 
     private static OpcaoParcelamento toOpcaoParcelamento(OpcaoParcelamentoVM opcaoParcelamentoVM) {
-        return new OpcaoParcelamento()
+        return OpcaoParcelamento
             .builder()
             .juros(BigDecimal.valueOf(opcaoParcelamentoVM.getJuros()))
             .build();
@@ -51,7 +51,7 @@ public class ApoliceAdapter {
     }
 
     public static Apolice toApolice (ApoliceVM apoliceVM) {
-        return new Apolice()
+        return Apolice
             .builder()
             .listCobertura(toListCobertura(apoliceVM))
             .listOpcaoParcelamento(toListOpcaoParcelamento(apoliceVM))
