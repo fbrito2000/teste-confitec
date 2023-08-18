@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.confitec.adapter.ApoliceAdapter;
-import br.com.confitec.domain.Apolice;
 import br.com.confitec.endpoint.entity.request.ApoliceVM;
 import br.com.confitec.usecase.CalcularPrecos;
 
