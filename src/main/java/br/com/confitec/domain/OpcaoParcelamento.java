@@ -1,12 +1,20 @@
 package br.com.confitec.domain;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
-public class StallmentRange {
-    private int startRange;
-    private int endRange;
-    private double fee;
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class OpcaoParcelamento {
+    private int quantidadeMinimaParcelas;
+    private int quantidadeMaximaParcelas;
+    private double juros;
 }
 /**
 REQUEST

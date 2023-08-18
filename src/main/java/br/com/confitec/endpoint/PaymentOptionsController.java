@@ -1,4 +1,4 @@
-package br.com.confitec.controller;
+package br.com.confitec.endpoint;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -6,18 +6,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.confitec.domain.PolicyPlan;
-import br.com.confitec.usecase.CreatePolicyPlan;
+import br.com.confitec.adapter.ApoliceAdapter;
+import br.com.confitec.domain.Apolice;
+import br.com.confitec.endpoint.entity.request.ApoliceVM;
+import br.com.confitec.usecase.CalcularPrecos;
 
 @RestController
 @RequestMapping("/confitec/teste/parcelamento")
 public class PaymentOptionsController {
     
     @Autowired
-    CreatePolicyPlan createPolicyPlan;
+    CalcularPrecos calcularPrecos;
 
     @PostMapping()
-    public void create(@RequestBody PolicyPlan policyPlan) {
-        createPolicyPlan.execute();
+    public void create(@RequestBody ApoliceVM apoliceVM) {
+
+        ApoliceAdapter adapter = new ApoliceAdapter();
+        calcularPrecos.montarProposta(adapter.toApolice(apoliceVM));
     }
 }
